@@ -16,10 +16,11 @@ class MergeSort
     i = 0
     j = 0
     loop do
-      (sorted_array.push(right_array); break) if left_array.size.eql?(j)
-      (sorted_array.push(left_array); break) if right_array.size.eql?(i)
+      (sorted_array.push(right_array[i..-1]); break) if left_array.size.eql?(j)
+      (sorted_array.push(left_array[j..-1]); break) if right_array.size.eql?(i)
       (sorted_array.push(left_array[j]); j += 1; next) if left_array[j] < right_array[i]
-      (sorted_array.push(right_array[i]); i += 1; next) if right_array[i] < left_array[j]
+      sorted_array.push(right_array[i])
+      i += 1
     end
 
     sorted_array.flatten
