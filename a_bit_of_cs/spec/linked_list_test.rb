@@ -1,4 +1,4 @@
-require './linked_list'
+require './linked_list/main'
 
 describe LinkedList do
   context 'when list is empty' do

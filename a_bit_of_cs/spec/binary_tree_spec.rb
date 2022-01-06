@@ -1,4 +1,4 @@
-require './binary_tree/binary_tree'
+require './binary_tree/main'
 
 describe Tree do
   context 'when arr size is one' do
