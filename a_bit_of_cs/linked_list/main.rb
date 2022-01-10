@@ -1,5 +1,6 @@
 #!/usr/bin/ruby
 require_relative 'myenum'
+require 'pry-byebug'
 
 class LinkedList
   include MyEnumerable
@@ -11,16 +12,16 @@ class LinkedList
 
   def append(value)
     node = Node.new(value)
-    return @head = node if @head.eql?(nil)
+    return @head = node if head.nil?
 
     tail.next_node = node
   end
 
   def prepend(value)
     node = Node.new(value)
-    return @head = node if head.eql?(nil)
+    return @head = node if head.nil?
 
-    node.next_node = @head
+    node.next_node = head
     @head = node
   end
 
@@ -38,11 +39,11 @@ class LinkedList
 
   def pop
     return nil if head.nil?
-    return (poped = head; @head = nil; poped) if size.eql?(1)
+    return (popped = head; @head = nil; popped) if size.eql?(1)
 
-    poped = tail
+    popped = tail
     pred(tail).next_node = nil
-    poped
+    popped
   end
 
   def contains?(value)
